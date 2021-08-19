@@ -18,8 +18,7 @@
 우리는 이번 예시에서 :math:`y=\sin(x)` 을 3차 다항식으로 풀어볼 것입니다. 네트워크(network)는 네 개의 매개변수(parameter)를 가질 것이고, 경사 하강법(gradient descent)으로 임의의 데이터가 만족하는 다항식을 찾기 위해 네트워크(network)의 출력(output)과 실젯값 간의 유클리디안 거리(Euclidean distance)를 최소화하여 네트워크(network)를 학습합니다.  
 
 .. Note::
-	또다른 예시들은 
-	:ref:`end of this page <examples-download>`에서 찾을 수 있습니다.
+	각각의 예제들은 :ref:`이 문서의 마지막 <examples-download>` 에서 살펴볼 수 있습니다.
 
 .. contents:: Table of Contents
 	:local:
