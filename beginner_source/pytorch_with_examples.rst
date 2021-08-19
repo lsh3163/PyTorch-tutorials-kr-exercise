@@ -1,48 +1,38 @@
-Learning PyTorch with Examples
+예시로 배우는 파이토치(Pytorch)
 ******************************
 **Author**: `Justin Johnson <https://github.com/jcjohnson/pytorch-examples>`_
 
 .. Note::
-	This is one of our older PyTorch tutorials. You can view our latest
-	beginner content in 
-	`Learn the Basics <https://pytorch.org/tutorials/beginner/basics/intro.html>`_.
+        이전에 제작된 파이토치(Pytorch) 튜토리얼입니다. 최신 초보자용 튜토리얼은
+	`Learn the Basics <https://pytorch.org/tutorials/beginner/basics/intro.html>`_ 에서 볼 수 있습니다.
 
-This tutorial introduces the fundamental concepts of
-`PyTorch <https://github.com/pytorch/pytorch>`__ through self-contained
-examples.
 
-At its core, PyTorch provides two main features:
 
-- An n-dimensional Tensor, similar to numpy but can run on GPUs
-- Automatic differentiation for building and training neural networks
+이 튜토리얼은 몇 가지 예시로 `파이토치 <https://github.com/pytorch/pytorch>`__ 의 기초가 되는 개념들을 소개합니다.  
 
-We will use a problem of fitting :math:`y=\sin(x)` with a third order polynomial
-as our running example. The network will have four parameters, and will be trained with
-gradient descent to fit random data by minimizing the Euclidean distance
-between the network output and the true output.
+파이토치(Pytorch)는 두 가지 핵심 내용을 제공합니다. 
+
+- n 차원의 텐서(Tensor)은 numpy와 비슷하지만 GPUs에서 작동합니다.
+- 자동 미분(Automatic differentiation)으로 신경망을 만들고 학습합니다.
+
+우리는 이번 예시에서 :math:`y=\sin(x)` 을 3차 다항식으로 풀어볼 것입니다. 네트워크(network)는 네 개의 매개변수(parameter)를 가질 것이고, 경사 하강법(gradient descent)으로 임의의 데이터가 만족하는 다항식을 찾기 위해 네트워크(network)의 출력(output)과 실젯값 간의 유클리디안 거리(Euclidean distance)를 최소화하여 네트워크(network)를 학습합니다.  
 
 .. Note::
-	You can browse the individual examples at the
-	:ref:`end of this page <examples-download>`.
+	또다른 예시들은 
+	:ref:`end of this page <examples-download>`에서 찾을 수 있습니다.
 
 .. contents:: Table of Contents
 	:local:
 
-Tensors
+텐서(Tensors)
 =======
 
 Warm-up: numpy
 --------------
 
-Before introducing PyTorch, we will first implement the network using
-numpy.
+파이토치(Pytorch)를 소개하기 전에 numpy로 네트워크(network)를 먼저 실행해보겠습니다. 
+Numpy는 n-차원의 배열 객체를 제공하고 배열들을 다루기 위한 많은 함수들을 제공합니다. Numpy는 과학적인 컴퓨팅을 하기 위한 제네릭 프레임워크(generic framework)입니다; numpy가 계산 그래프(computation graph), 딥 러닝(deep learning), 기울기(gradients)에 대한 것을 제공하지는 않습니다. 하지만 우리는 numpy 연산을 사용한 네트워크(network)로 순전파와 역전파를 구현하여 사인(sine) 함수에 맞는 3차 다항식을 쉽게 학습할 수 있습니다. 
 
-Numpy provides an n-dimensional array object, and many functions for
-manipulating these arrays. Numpy is a generic framework for scientific
-computing; it does not know anything about computation graphs, or deep
-learning, or gradients. However we can easily use numpy to fit a
-third order polynomial to sine function by manually implementing the forward
-and backward passes through the network using numpy operations:
 
 .. includenodoc:: /beginner/examples_tensor/polynomial_numpy.py
 
