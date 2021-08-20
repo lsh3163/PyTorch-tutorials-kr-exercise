@@ -1,16 +1,16 @@
-예시로 배우는 파이토치(Pytorch)
+예시로 배우는 파이토치(PyTorch)
 ******************************
 **Author**: `Justin Johnson <https://github.com/jcjohnson/pytorch-examples>`_
 
 .. Note::
-        이전에 제작된 파이토치(Pytorch) 튜토리얼입니다. 최신 초보자용 튜토리얼은
+        이전에 제작된 파이토치(PyTorch) 튜토리얼입니다. 최신 초보자용 튜토리얼은
 	`Learn the Basics <https://pytorch.org/tutorials/beginner/basics/intro.html>`_ 에서 볼 수 있습니다.
 
 
 
 이 튜토리얼은 몇 가지 예시로 `파이토치 <https://github.com/pytorch/pytorch>`__ 의 기초가 되는 개념들을 소개합니다.  
 
-파이토치(Pytorch)는 두 가지 핵심 내용을 제공합니다. 
+파이토치(PyTorch)는 두 가지 핵심 내용을 제공합니다. 
 
 - n 차원의 텐서(Tensor)은 numpy와 비슷하지만 GPUs에서 작동합니다.
 - 자동 미분(Automatic differentiation)으로 신경망을 만들고 학습합니다.
@@ -29,7 +29,7 @@
 Warm-up: numpy
 --------------
 
-파이토치(Pytorch)를 소개하기 전에 numpy로 네트워크(network)를 먼저 실행해보겠습니다. 
+파이토치(PyTorch)를 소개하기 전에 numpy로 네트워크(network)를 먼저 실행해보겠습니다. 
 Numpy는 n-차원의 배열 객체를 제공하고 배열들을 다루기 위한 많은 함수들을 제공합니다. Numpy는 과학적인 컴퓨팅을 하기 위한 제네릭 프레임워크(generic framework)입니다; numpy가 계산 그래프(computation graph), 딥 러닝(deep learning), 기울기(gradients)에 대한 것을 제공하지는 않습니다. 하지만 우리는 numpy 연산을 사용한 네트워크(network)로 순전파와 역전파를 구현하여 사인(sine) 함수에 맞는 3차 다항식을 쉽게 학습할 수 있습니다. 
 
 
