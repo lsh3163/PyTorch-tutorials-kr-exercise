@@ -12,10 +12,10 @@
 
 파이토치(PyTorch)는 두 가지 핵심 내용을 제공합니다. 
 
-- n 차원의 텐서(Tensor)은 numpy와 비슷하지만 GPUs에서 작동합니다.
+- n 차원의 텐서(Tensor)는 numpy와 비슷하지만 GPU에서도 작동할 수 있습니다.
 - 자동 미분(Automatic differentiation)으로 신경망을 만들고 학습합니다.
 
-우리는 이번 예시에서 :math:`y=\sin(x)` 을 3차 다항식으로 풀어볼 것입니다. 네트워크(network)는 네 개의 매개변수(parameter)를 가질 것이고, 경사 하강법(gradient descent)으로 임의의 데이터가 만족하는 다항식을 찾기 위해 네트워크(network)의 출력(output)과 실젯값 간의 유클리디안 거리(Euclidean distance)를 최소화하여 네트워크(network)를 학습합니다.  
+우리는 이번 예시에서 :math:`y=\sin(x)` 을 3차 다항식으로 풀어볼 것입니다. 네트워크(network)는 네 개의 매개변수(parameter)를 가질 것이고, 경사 하강법(gradient descent)으로 임의의 데이터가 만족하는 다항식을 찾기 위해 네트워크(network)의 출력(output)과 실젯값 간의 유클리디안 거리(Euclidean distance)를 최소화하여 학습됩니다.  
 
 .. Note::
 	각각의 예제들은 :ref:`이 문서의 마지막 <examples-download>` 에서 살펴볼 수 있습니다.
